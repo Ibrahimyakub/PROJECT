@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InterviewAce - AI Interview Practice</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6fb;
+color:#222;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#4f46e5;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 8%;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+margin-bottom:25px;
+color:#555;
+}
+
+.btn{
+padding:12px 24px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+section{
+padding:70px 8%;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 10px rgba(0,0,0,0.05);
+}
+
+.feature h3{
+margin-bottom:10px;
+}
+
+.mock{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
+text-align:center;
+}
+
+textarea{
+width:100%;
+padding:10px;
+margin-top:15px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.plan{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.plan h2{
+margin-bottom:10px;
+}
+
+.price{
+font-size:28px;
+margin:15px 0;
+color:#4f46e5;
+}
+
+.faq{
+max-width:700px;
+margin:auto;
+}
+
+.faq-item{
+margin-bottom:20px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:60px;
+}
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero img{
+margin-top:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">InterviewAce</div>
+
+<nav>
+<a href="#features">Features</a>
+<a href="#practice">Practice</a>
+<a href="#pricing">Pricing</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Ace Your Next Job Interview</h1>
+
+<p>Practice realistic interview questions and get instant feedback to improve your confidence.</p>
+
+<button class="btn" onclick="scrollToPractice()">Start Practicing</button>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 style="text-align:center;margin-bottom:40px;">Platform Features</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>AI Interview Questions</h3>
+<p>Get realistic interview questions used by real companies.</p>
+</div>
+
+<div class="feature">
+<h3>Instant Feedback</h3>
+<p>Analyze your answers and improve communication skills.</p>
+</div>
+
+<div class="feature">
+<h3>Track Progress</h3>
+<p>Save interview sessions and measure improvement.</p>
+</div>
+
+<div class="feature">
+<h3>Multiple Roles</h3>
+<p>Practice for engineering, business and tech roles.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="practice">
+
+<h2 style="text-align:center;margin-bottom:40px;">Mock Interview Practice</h2>
+
+<div class="mock">
+
+<h3 id="question">Click below to get a question</h3>
+
+<br>
+
+<button class="btn" onclick="generateQuestion()">Generate Question</button>
+
+<textarea id="answer" rows="4" placeholder="Write your answer here"></textarea>
+
+<br><br>
+
+<button class="btn" onclick="submitAnswer()">Submit Answer</button>
+
+<p id="feedback" style="margin-top:20px;"></p>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<h2 style="text-align:center;margin-bottom:40px;">Subscription Plans</h2>
+
+<div class="pricing">
+
+<div class="plan">
+
+<h2>Free</h2>
+
+<div class="price">$0</div>
+
+<p>5 interview questions daily</p>
+<p>Basic feedback</p>
+
+<br>
+
+<button class="btn">Start Free</button>
+
+</div>
+
+<div class="plan">
+
+<h2>Pro</h2>
+
+<div class="price">$9/month</div>
+
+<p>Unlimited interviews</p>
+<p>AI feedback</p>
+<p>Performance analytics</p>
+
+<br>
+
+<button class="btn">Subscribe</button>
+
+</div>
+
+<div class="plan">
+
+<h2>Premium</h2>
+
+<div class="price">$19/month</div>
+
+<p>All Pro features</p>
+<p>Video interview practice</p>
+<p>Career coaching tips</p>
+
+<br>
+
+<button class="btn">Subscribe</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 style="text-align:center;margin-bottom:40px;">FAQ</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+<strong>Is the platform free?</strong>
+<p>Yes, a free plan is available with limited practice questions.</p>
+</div>
+
+<div class="faq-item">
+<strong>Does it use AI?</strong>
+<p>Yes, our system analyzes answers and provides suggestions.</p>
+</div>
+
+<div class="faq-item">
+<strong>Can I track my performance?</strong>
+<p>Yes, Pro users can monitor interview performance over time.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 InterviewAce. All rights reserved.</p>
+
+</footer>
+
+<script>
+
+const questions = [
+
+"Tell me about yourself.",
+
+"Why do you want to work at this company?",
+
+"What are your strengths and weaknesses?",
+
+"Describe a challenge you faced and how you solved it.",
+
+"Where do you see yourself in 5 years?",
+
+"Why should we hire you?"
+
+];
+
+function generateQuestion(){
+
+let random = Math.floor(Math.random()*questions.length);
+
+document.getElementById("question").innerText = questions[random];
+
+}
+
+function submitAnswer(){
+
+let answer = document.getElementById("answer").value;
+
+if(answer.length < 20){
+
+document.getElementById("feedback").innerText =
+"Your answer is too short. Try explaining more.";
+
+return;
+
+}
+
+let score = Math.floor(Math.random()*30)+70;
+
+document.getElementById("feedback").innerText =
+"Feedback Score: " + score + "/100. Good attempt! Improve clarity and structure.";
+
+localStorage.setItem("lastScore", score);
+
+}
+
+function scrollToPractice(){
+
+document.getElementById("practice").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
