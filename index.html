@@ -3,166 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InterviewAce - AI Interview Practice</title>
+<title>PowerWeb eBook Store</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
 body{
-background:#f4f6fb;
-color:#222;
+font-family:Arial;
+margin:0;
+background:#f4f4f4;
+color:#333;
 }
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#4f46e5;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-size:14px;
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
 }
 
 .hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px 8%;
-}
-
-.hero-text{
-max-width:500px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero p{
-margin-bottom:25px;
-color:#555;
+padding:60px 20px;
+text-align:center;
+background:#222;
+color:white;
 }
 
 .btn{
-padding:12px 24px;
-background:#4f46e5;
+background:#ff6600;
 color:white;
+padding:12px 20px;
 border:none;
-border-radius:6px;
+border-radius:5px;
 cursor:pointer;
+margin:5px;
 }
 
-section{
-padding:70px 8%;
+.btn:hover{
+background:#ff4500;
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+padding:40px 0;
 }
 
-.feature{
+.book{
 background:white;
-padding:25px;
+padding:20px;
+margin:20px 0;
 border-radius:8px;
-box-shadow:0 5px 10px rgba(0,0,0,0.05);
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-.feature h3{
-margin-bottom:10px;
-}
-
-.mock{
+.quiz{
 background:white;
-padding:30px;
-border-radius:10px;
-max-width:600px;
-margin:auto;
-text-align:center;
+padding:20px;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-textarea{
-width:100%;
-padding:10px;
-margin-top:15px;
-border-radius:6px;
-border:1px solid #ddd;
-}
-
-.pricing{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.plan{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.05);
-text-align:center;
-}
-
-.plan h2{
-margin-bottom:10px;
-}
-
-.price{
-font-size:28px;
-margin:15px 0;
-color:#4f46e5;
-}
-
-.faq{
-max-width:700px;
-margin:auto;
-}
-
-.faq-item{
+.question{
 margin-bottom:20px;
+}
+
+.email-box{
+text-align:center;
+background:#222;
+color:white;
+padding:50px 20px;
+}
+
+input{
+padding:10px;
+width:250px;
+border:none;
+border-radius:5px;
 }
 
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:25px;
-margin-top:60px;
+padding:20px;
 }
 
-@media(max-width:768px){
-
-.hero{
-flex-direction:column;
-text-align:center;
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
 }
 
-.hero img{
-margin-top:40px;
-}
-
+.modal-content{
+background:white;
+max-width:700px;
+margin:100px auto;
+padding:30px;
+border-radius:8px;
 }
 
 </style>
@@ -171,226 +113,213 @@ margin-top:40px;
 <body>
 
 <header>
-
-<div class="logo">InterviewAce</div>
-
-<nav>
-<a href="#features">Features</a>
-<a href="#practice">Practice</a>
-<a href="#pricing">Pricing</a>
-</nav>
-
+<h1>PowerWeb eBook Store</h1>
 </header>
 
 <section class="hero">
-
-<div class="hero-text">
-
-<h1>Ace Your Next Job Interview</h1>
-
-<p>Practice realistic interview questions and get instant feedback to improve your confidence.</p>
-
-<button class="btn" onclick="scrollToPractice()">Start Practicing</button>
-
-</div>
-
+<h2>Learn Powerful Digital Skills</h2>
+<p>Download practical ebooks and test your knowledge with our quiz.</p>
+<button class="btn" onclick="scrollToQuiz()">Take Free Quiz</button>
 </section>
 
-<section id="features">
+<div class="container">
 
-<h2 style="text-align:center;margin-bottom:40px;">Platform Features</h2>
+<h2>Featured eBook</h2>
 
-<div class="features">
-
-<div class="feature">
-<h3>AI Interview Questions</h3>
-<p>Get realistic interview questions used by real companies.</p>
-</div>
-
-<div class="feature">
-<h3>Instant Feedback</h3>
-<p>Analyze your answers and improve communication skills.</p>
-</div>
-
-<div class="feature">
-<h3>Track Progress</h3>
-<p>Save interview sessions and measure improvement.</p>
-</div>
-
-<div class="feature">
-<h3>Multiple Roles</h3>
-<p>Practice for engineering, business and tech roles.</p>
+<div class="book">
+<h3>Build Websites From Scratch</h3>
+<p>Learn HTML, CSS and JavaScript step-by-step.</p>
+<h3>$9</h3>
+<button class="btn" onclick="buyBook()">Buy Now</button>
 </div>
 
 </div>
 
-</section>
+<div class="container">
 
-<section id="practice">
+<h2>20 Question Skill Quiz</h2>
 
-<h2 style="text-align:center;margin-bottom:40px;">Mock Interview Practice</h2>
+<div class="quiz" id="quiz"></div>
 
-<div class="mock">
+<button class="btn" onclick="submitQuiz()">Submit Quiz</button>
 
-<h3 id="question">Click below to get a question</h3>
-
-<br>
-
-<button class="btn" onclick="generateQuestion()">Generate Question</button>
-
-<textarea id="answer" rows="4" placeholder="Write your answer here"></textarea>
-
-<br><br>
-
-<button class="btn" onclick="submitAnswer()">Submit Answer</button>
-
-<p id="feedback" style="margin-top:20px;"></p>
+<h3 id="result"></h3>
 
 </div>
 
-</section>
+<section class="email-box">
 
-<section id="pricing">
+<h2>Join Our Email List</h2>
 
-<h2 style="text-align:center;margin-bottom:40px;">Subscription Plans</h2>
+<p>Get free ebooks and tips.</p>
 
-<div class="pricing">
+<input type="email" id="email" placeholder="Enter email">
 
-<div class="plan">
+<button class="btn" onclick="subscribe()">Subscribe</button>
 
-<h2>Free</h2>
-
-<div class="price">$0</div>
-
-<p>5 interview questions daily</p>
-<p>Basic feedback</p>
-
-<br>
-
-<button class="btn">Start Free</button>
-
-</div>
-
-<div class="plan">
-
-<h2>Pro</h2>
-
-<div class="price">$9/month</div>
-
-<p>Unlimited interviews</p>
-<p>AI feedback</p>
-<p>Performance analytics</p>
-
-<br>
-
-<button class="btn">Subscribe</button>
-
-</div>
-
-<div class="plan">
-
-<h2>Premium</h2>
-
-<div class="price">$19/month</div>
-
-<p>All Pro features</p>
-<p>Video interview practice</p>
-<p>Career coaching tips</p>
-
-<br>
-
-<button class="btn">Subscribe</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 style="text-align:center;margin-bottom:40px;">FAQ</h2>
-
-<div class="faq">
-
-<div class="faq-item">
-<strong>Is the platform free?</strong>
-<p>Yes, a free plan is available with limited practice questions.</p>
-</div>
-
-<div class="faq-item">
-<strong>Does it use AI?</strong>
-<p>Yes, our system analyzes answers and provides suggestions.</p>
-</div>
-
-<div class="faq-item">
-<strong>Can I track my performance?</strong>
-<p>Yes, Pro users can monitor interview performance over time.</p>
-</div>
-
-</div>
+<p id="emailMessage"></p>
 
 </section>
 
 <footer>
 
-<p>© 2026 InterviewAce. All rights reserved.</p>
+<p>© 2026 PowerWeb</p>
+
+<a href="#" onclick="showPrivacy()" style="color:white">Privacy Policy</a>
 
 </footer>
 
+
+<div class="modal" id="privacyModal">
+
+<div class="modal-content">
+
+<h2>Privacy Policy</h2>
+
+<p>
+We respect your privacy. Any email collected on this website is only used
+for sending educational content and ebook updates.
+</p>
+
+<p>
+We do not sell or share your personal information with third parties.
+</p>
+
+<button class="btn" onclick="closePrivacy()">Close</button>
+
+</div>
+
+</div>
+
+
 <script>
 
-const questions = [
+function buyBook(){
+alert("Redirecting to payment page...");
+}
 
-"Tell me about yourself.",
+function scrollToQuiz(){
+window.scrollTo({top:700,behavior:"smooth"})
+}
 
-"Why do you want to work at this company?",
+function subscribe(){
 
-"What are your strengths and weaknesses?",
+let email=document.getElementById("email").value
 
-"Describe a challenge you faced and how you solved it.",
+if(email===""){
+document.getElementById("emailMessage").innerText="Enter email"
+return
+}
 
-"Where do you see yourself in 5 years?",
+document.getElementById("emailMessage").innerText="Subscribed successfully!"
+}
 
-"Why should we hire you?"
+function showPrivacy(){
+document.getElementById("privacyModal").style.display="block"
+}
 
-];
+function closePrivacy(){
+document.getElementById("privacyModal").style.display="none"
+}
 
-function generateQuestion(){
 
-let random = Math.floor(Math.random()*questions.length);
+const questions=[
 
-document.getElementById("question").innerText = questions[random];
+"HTML stands for?",
+"CSS is used for?",
+"JavaScript runs in?",
+"Which tag creates link?",
+"Which tag creates image?",
+"What does SEO mean?",
+"Which language runs browser?",
+"GitHub is used for?",
+"Which tag creates paragraph?",
+"Which property changes color?",
+"Which tag creates heading?",
+"JS means?",
+"What is domain?",
+"What is hosting?",
+"Which language styles web?",
+"What does API mean?",
+"What is responsive design?",
+"What does URL mean?",
+"Which tag creates list?",
+"What does HTTP mean?"
+
+]
+
+const answers=[
+"HyperText Markup Language",
+"Styling websites",
+"Browser",
+"<a>",
+"<img>",
+"Search Engine Optimization",
+"JavaScript",
+"Code hosting",
+"<p>",
+"color",
+"<h1>",
+"JavaScript",
+"Website address",
+"Server storage",
+"CSS",
+"Application Programming Interface",
+"Mobile friendly design",
+"Website address",
+"<ul>",
+"HyperText Transfer Protocol"
+]
+
+let quizHTML=""
+
+for(let i=0;i<questions.length;i++){
+
+quizHTML+=`
+
+<div class="question">
+
+<p>${i+1}. ${questions[i]}</p>
+
+<input type="text" id="q${i}">
+
+</div>
+
+`
 
 }
 
-function submitAnswer(){
+document.getElementById("quiz").innerHTML=quizHTML
 
-let answer = document.getElementById("answer").value;
 
-if(answer.length < 20){
+function submitQuiz(){
 
-document.getElementById("feedback").innerText =
-"Your answer is too short. Try explaining more.";
+let score=0
 
-return;
+for(let i=0;i<questions.length;i++){
+
+let user=document.getElementById("q"+i).value.toLowerCase()
+
+if(user.includes(answers[i].toLowerCase().split(" ")[0])){
+score++
+}
 
 }
 
-let score = Math.floor(Math.random()*30)+70;
+document.getElementById("result").innerText="Your score: "+score+"/20"
 
-document.getElementById("feedback").innerText =
-"Feedback Score: " + score + "/100. Good attempt! Improve clarity and structure.";
 
-localStorage.setItem("lastScore", score);
+if(score<10){
+
+setTimeout(function(){
+
+alert("You qualify for the FREE PLAN quiz training!")
+
+window.location.href="#"
+
+},1500)
 
 }
-
-function scrollToPractice(){
-
-document.getElementById("practice").scrollIntoView({
-behavior:"smooth"
-});
 
 }
 
