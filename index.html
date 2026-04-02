@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>PowerWeb eBook Platform</title>
+<title>Ebook Power Platform</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +10,7 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f5f5f5;
+background:#f4f4f4;
 }
 
 header{
@@ -21,206 +20,151 @@ padding:20px;
 text-align:center;
 }
 
-nav{
-background:#222;
-padding:10px;
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
+section{
+padding:40px;
+max-width:1000px;
+margin:auto;
 }
 
 .hero{
-padding:80px 20px;
 text-align:center;
-background:#0f172a;
-color:white;
 }
 
-.btn{
-background:#ff6600;
-color:white;
-padding:12px 20px;
+button{
+padding:12px 25px;
+background:#0077ff;
 border:none;
-border-radius:5px;
+color:white;
 cursor:pointer;
-margin:5px;
+border-radius:5px;
 }
 
-.container{
-width:90%;
-max-width:1000px;
-margin:auto;
-padding:40px 0;
+button:hover{
+background:#0056cc;
 }
 
 .card{
 background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+padding:20px;
+margin:20px 0;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quiz-question{
 margin-bottom:20px;
-}
-
-.quiz input{
-padding:8px;
-width:90%;
-margin-top:5px;
-}
-
-.email-section{
-background:#111;
-color:white;
-padding:60px 20px;
-text-align:center;
 }
 
 input[type=email]{
 padding:10px;
 width:250px;
-border-radius:5px;
-border:none;
 }
 
 footer{
-background:#000;
+background:#111;
 color:white;
 padding:20px;
 text-align:center;
+margin-top:40px;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-td,th{
-padding:10px;
-border-bottom:1px solid #ccc;
-text-align:left;
-}
-
-.modal{
+#quizSection{
 display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
 }
 
-.modal-content{
-background:white;
-max-width:700px;
-margin:80px auto;
-padding:30px;
-border-radius:10px;
+#result{
+font-size:20px;
+font-weight:bold;
+margin-top:20px;
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 <header>
-<h1>PowerWeb Digital Academy</h1>
+<h1>Ultimate Exam Success Ebook</h1>
+<p>Pass any exam with proven study strategies</p>
 </header>
-
-<nav>
-<a href="#">Home</a>
-<a href="#quiz">Quiz</a>
-<a href="#leaderboard">Leaderboard</a>
-</nav>
 
 
 <section class="hero">
 
-<h2>Learn Tech Skills & Download Powerful eBooks</h2>
+<h2>Learn Smarter. Pass Faster.</h2>
 
-<p>Test your knowledge with our quiz and unlock learning resources.</p>
+<p>Download our powerful ebook used by thousands of students.</p>
 
-<button class="btn" onclick="scrollQuiz()">Take Free Quiz</button>
+<button onclick="startQuiz()">Try Free Quiz</button>
+
+<button onclick="pay()">Buy Ebook - $10</button>
 
 </section>
 
 
 
-<div class="container">
+<section class="card">
 
-<h2>Featured eBook</h2>
+<h2>Email Subscription</h2>
 
-<div class="card">
+<p>Get free study tips weekly</p>
 
-<h3>Complete Website Development Guide</h3>
+<input type="email" id="email" placeholder="Enter email">
 
-<p>Learn HTML, CSS and JavaScript from beginner to advanced.</p>
+<button onclick="subscribe()">Subscribe</button>
 
-<h3>$9</h3>
+<p id="subMsg"></p>
 
-<button class="btn" onclick="payNow()">Buy Now</button>
-
-</div>
-
-</div>
+</section>
 
 
 
-<div class="container">
+<section id="quizSection" class="card">
 
-<h2 id="quiz">20 Question Tech Quiz</h2>
+<h2>Free Quiz Challenge</h2>
 
-<div class="card quiz" id="quizBox"></div>
+<div id="quiz"></div>
 
-<button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+<button onclick="submitQuiz()">Submit Quiz</button>
 
-<h3 id="score"></h3>
+<div id="result"></div>
 
-</div>
-
-
-
-<div class="container">
-
-<h2 id="leaderboard">Quiz Leaderboard</h2>
-
-<div class="card">
-
-<table>
-
-<thead>
-<tr>
-<th>Name</th>
-<th>Score</th>
-</tr>
-</thead>
-
-<tbody id="board"></tbody>
-
-</table>
-
-</div>
-
-</div>
+</section>
 
 
 
-<section class="email-section">
+<section class="card">
 
-<h2>Join Our Email Community</h2>
+<h2>AI Quiz Generator</h2>
 
-<p>Receive free ebooks and tech tutorials.</p>
+<p>Ask for a quiz question</p>
 
-<input type="email" id="email">
+<input id="aiInput" placeholder="Example: physics">
 
-<button class="btn" onclick="subscribe()">Subscribe</button>
+<button onclick="generateAI()">Generate</button>
 
-<p id="emailMsg"></p>
+<div id="aiOutput"></div>
+
+</section>
+
+
+
+<section class="card">
+
+<h2>Privacy Policy</h2>
+
+<p>
+
+We respect your privacy. Your email will only be used to send updates and study resources.
+
+We never sell or share your information with third parties.
+
+Payments are securely processed through
+
+:contentReference[oaicite:3]{index=3}.
+
+</p>
 
 </section>
 
@@ -228,56 +172,91 @@ border-radius:10px;
 
 <footer>
 
-<p>© 2026 PowerWeb Academy</p>
-
-<a href="#" onclick="openPrivacy()" style="color:white">Privacy Policy</a>
+<p>© 2026 Ebook Learning Platform</p>
 
 </footer>
 
 
 
-<div class="modal" id="privacy">
-
-<div class="modal-content">
-
-<h2>Privacy Policy</h2>
-
-<p>
-We respect your privacy. Any information collected such as email
-addresses are used only for educational updates and ebook delivery.
-</p>
-
-<p>
-We do not sell or distribute personal data.
-</p>
-
-<button class="btn" onclick="closePrivacy()">Close</button>
-
-</div>
-
-</div>
-
-
-
 <script>
 
+let questions=[]
 
-function scrollQuiz(){
+for(let i=1;i<=20;i++){
 
-window.scrollTo({
-top:600,
-behavior:"smooth"
+questions.push({
+question:"Sample Question "+i+" : What is 2 + 2 ?",
+options:["3","4","5","6"],
+answer:1
 })
 
 }
 
 
 
-function payNow(){
+function startQuiz(){
 
-alert("Payment successful (demo). Ebook downloading...")
+document.getElementById("quizSection").style.display="block"
 
-window.open("ebook.pdf")
+let html=""
+
+questions.forEach((q,i)=>{
+
+html+=`<div class="quiz-question">
+<p>${q.question}</p>`
+
+q.options.forEach((opt,j)=>{
+
+html+=`
+
+<label>
+<input type="radio" name="q${i}" value="${j}">
+${opt}
+</label><br>
+
+`
+
+})
+
+html+="</div>"
+
+})
+
+document.getElementById("quiz").innerHTML=html
+
+}
+
+
+
+function submitQuiz(){
+
+let score=0
+
+questions.forEach((q,i)=>{
+
+let ans=document.querySelector(`input[name=q${i}]:checked`)
+
+if(ans && ans.value==q.answer){
+
+score++
+
+}
+
+})
+
+document.getElementById("result").innerHTML="Your Score: "+score+"/20"
+
+if(score<10){
+
+setTimeout(()=>{
+
+alert("Upgrade to premium ebook to improve your score!")
+
+window.scrollTo(0,0)
+
+},2000)
+
+}
 
 }
 
@@ -287,144 +266,85 @@ function subscribe(){
 
 let email=document.getElementById("email").value
 
-if(email===""){
+if(!email){
 
-document.getElementById("emailMsg").innerText="Enter email"
+alert("Enter email")
 
 return
 
 }
 
-let emails=JSON.parse(localStorage.getItem("emails")||"[]")
+let list=JSON.parse(localStorage.getItem("emails")||"[]")
 
-emails.push(email)
+list.push(email)
 
-localStorage.setItem("emails",JSON.stringify(emails))
+localStorage.setItem("emails",JSON.stringify(list))
 
-document.getElementById("emailMsg").innerText="Subscribed!"
-
-}
-
-
-
-function openPrivacy(){
-
-document.getElementById("privacy").style.display="block"
-
-}
-
-function closePrivacy(){
-
-document.getElementById("privacy").style.display="none"
+document.getElementById("subMsg").innerHTML="Subscribed!"
 
 }
 
 
 
-const questions=[
+function generateAI(){
 
-"HTML stands for?",
-"CSS is used for?",
-"JavaScript runs in?",
-"Which tag creates link?",
-"Which tag creates image?",
-"What does SEO mean?",
-"Which language runs browser?",
-"GitHub is used for?",
-"Which tag creates paragraph?",
-"Which property changes text color?",
-"Which tag creates heading?",
-"What does JS mean?",
-"What is a domain?",
-"What is hosting?",
-"Which language styles web?",
-"What does API mean?",
-"What is responsive design?",
-"What does URL mean?",
-"Which tag creates list?",
-"What does HTTP mean?"
+let topic=document.getElementById("aiInput").value
 
-]
+let q="What is the main concept of "+topic+"?"
 
+let options=["Definition","Application","History","All of the above"]
 
-let quizHTML=""
+let html=`<p><b>${q}</b></p>`
 
-for(let i=0;i<questions.length;i++){
+options.forEach(o=>{
 
-quizHTML+=`
-
-<p>${i+1}. ${questions[i]}</p>
-<input id="q${i}">
-
-`
-
-}
-
-document.getElementById("quizBox").innerHTML=quizHTML
-
-
-
-function submitQuiz(){
-
-let score=0
-
-for(let i=0;i<questions.length;i++){
-
-let val=document.getElementById("q"+i).value
-
-if(val.length>3){
-
-score++
-
-}
-
-}
-
-document.getElementById("score").innerText="Score: "+score+"/20"
-
-let name=prompt("Enter your name")
-
-let board=JSON.parse(localStorage.getItem("board")||"[]")
-
-board.push({name:name,score:score})
-
-localStorage.setItem("board",JSON.stringify(board))
-
-renderBoard()
-
-if(score<10){
-
-alert("You qualify for FREE PLAN training")
-
-window.location.href="#"
-
-}
-
-}
-
-
-
-function renderBoard(){
-
-let board=JSON.parse(localStorage.getItem("board")||"[]")
-
-let html=""
-
-board.forEach(user=>{
-
-html+=`<tr><td>${user.name}</td><td>${user.score}</td></tr>`
+html+=`<p>${o}</p>`
 
 })
 
-document.getElementById("board").innerHTML=html
+document.getElementById("aiOutput").innerHTML=html
 
 }
 
-renderBoard()
 
+
+function pay(){
+
+let handler=PaystackPop.setup({
+
+key:"YOUR_PAYSTACK_PUBLIC_KEY",
+
+email:"customer@email.com",
+
+amount:1000*100,
+
+currency:"USD",
+
+callback:function(response){
+
+alert("Payment successful")
+
+window.location="ebook.pdf"
+
+},
+
+onClose:function(){
+
+alert("Transaction cancelled")
+
+}
+
+})
+
+handler.openIframe()
+
+}
 
 </script>
 
-</body>
 
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+
+</body>
 </html>
